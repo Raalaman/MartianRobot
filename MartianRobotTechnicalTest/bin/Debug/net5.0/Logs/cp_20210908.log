@@ -1,0 +1,4 @@
+2021-09-08T17:06:42.0814620+02:00 [INF] () Creating instance MartianRobotDataService
+2021-09-08T17:06:42.1424631+02:00 [INF] () Creating instance OutputGeneratorService
+2021-09-08T17:06:42.1433804+02:00 [INF] () Getting InputData
+2021-09-08T17:06:42.1606116+02:00 [INF] () Generating Output

@@ -1,0 +1,36 @@
+trigger:
+  branches:
+    include:
+    - master
+    - develop
+    - release/*
+    exclude:
+    - pipelines/*
+  paths:
+    exclude:
+    - README.md
+    - azure-pipelines.yml
+    
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  BuildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  vmImage: 'ubuntu-latest'
+
+parameters:
+- name: test
+  displayName: Run Tests?
+  type: boolean
+  default: true
+
+stages:
+
+- template: martian-robot-validate-pr.yml
+
+- template: martian-robot-validate.yml
+  parameters:
+    test: ${{ parameters.test }} 
+
+- template: martian-robot-build.yml
